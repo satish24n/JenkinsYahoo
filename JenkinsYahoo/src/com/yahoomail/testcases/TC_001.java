@@ -1,8 +1,10 @@
 package com.yahoomail.testcases;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -19,7 +21,10 @@ public class TC_001 {
 	
 	@BeforeMethod
 	public void beforeMetod() {
+		File file = new File("C:/Selenium/geckodriver/geckodriver.exe");
+		System.setProperty("webdriver.geckodriver.driver", file.getAbsolutePath());
 		driver = new FirefoxDriver();
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(ObjectRepository.URL);
 	}

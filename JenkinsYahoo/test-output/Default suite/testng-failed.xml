@@ -6,8 +6,8 @@
       <class name="com.yahoomail.testcases.TC_001">
         <methods>
           <include name="AfterMetod"/>
-          <include name="TC_002_ComposeAndSend"/>
           <include name="beforeMetod"/>
+          <include name="TC_003_assrt"/>
         </methods>
       </class> <!-- com.yahoomail.testcases.TC_001 -->
     </classes>
