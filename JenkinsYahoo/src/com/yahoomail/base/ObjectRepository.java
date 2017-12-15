@@ -8,4 +8,5 @@ public class ObjectRepository {
 	public static String email1 = "schatish123@gmail.com";
 	public static String subect_Text = "subject123";
 	public static String email_messageBody_Text= "Cursious Case of Benjamin Button";
+	public static String username_top_right ="";
 }

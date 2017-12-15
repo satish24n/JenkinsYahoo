@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -28,7 +29,7 @@ public class TC_001 {
 		driver.quit();
 	}
 	
-	@Test
+/*	@Test
 	public void TC_001_loginUser() {
 		YahooLogin yl = new YahooLogin(driver);
 		yl.LoginWithCred();
@@ -40,6 +41,33 @@ public class TC_001 {
 		yl.LoginWithCred();
 		ComposeEmailAndSend ceas = new ComposeEmailAndSend(driver);
 		ceas.composeAndSendEmail();
+		String str1 = ceas.getTitle();
+		ceas.signOut();
+		String str2 = ceas.getTitle();
+		System.out.println("$$$$: "+str1);
+		System.out.println("####: "+str2);
+		boolean flag=true;
+		if(str2.equals(str1)) {
+			flag=false;
+		}
+		Assert.assertTrue(flag);
+	}*/
+	
+	@Test
+	public void TC_003_assrt() {
+		YahooLogin yl = new YahooLogin(driver);
+		ComposeEmailAndSend ceas = new ComposeEmailAndSend(driver);
+		yl.LoginWithCred();
+		String str1 = ceas.getTitle();
+		ceas.signOut();
+		String str2 = ceas.getTitle();
+		System.out.println("$$$$: "+str1);
+		System.out.println("####: "+str2);
+		boolean flag=true;
+		if(str2.equals(str1)) {
+			flag=false;
+		}
+		Assert.assertTrue(flag);
 	}
 
 }

@@ -27,6 +27,12 @@ public class ComposeEmailAndSend {
 	@FindBy(how=How.XPATH, using="//button[@title='Send this email']")
 	WebElement send_Email_Button;
 	
+	@FindBy(how=How.ID, using="ybarAccountMenu")
+	WebElement user_icon_topRight;
+	
+	@FindBy(how=How.XPATH, using="//span[text()='Sign out']")
+	WebElement signOut_button;
+	
 	//Methods for Compose page
 	
 	public void composeAndSendEmail() {
@@ -36,5 +42,13 @@ public class ComposeEmailAndSend {
 		emailBody_Editor.sendKeys(ObjectRepository.email_messageBody_Text);
 		send_Email_Button.click();
 	}
+	public void signOut() {
+		user_icon_topRight.click();
+		signOut_button.click();
+	}
+	public String getTitle() {
+		return driver.getTitle();
+	}
+	
 	
 }
